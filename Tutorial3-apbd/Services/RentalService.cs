@@ -35,7 +35,7 @@ public class RentalService
     public void RentEquipment(User user, Equipment equipment, int days)
     {
         if (!equipment.IsAvailable || !equipment.IsOperational)
-            throw new Exception("Unavailable equipment");
+            throw new InvalidOperationException("Unavailable equipment");
 
         int activeRentals = _rentals.Count(r => r.User == user && !r.IsReturned);
         
