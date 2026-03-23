@@ -13,7 +13,7 @@ public abstract class Equipment
         Id = _idCounter++;
         Name = name;
         IsAvailable = true;
-        IsOperational = false;
+        IsOperational = true;
     }
     
     public override string ToString()
