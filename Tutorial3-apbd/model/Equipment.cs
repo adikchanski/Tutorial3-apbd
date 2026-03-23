@@ -3,10 +3,10 @@ namespace Tutorial3_apbd.model;
 public abstract class Equipment
 {
     private static int _idCounter = 1;
-    protected int Id { get; }
-    protected string Name  { get; set; }
-    protected bool IsAvailable  { get; set; }
-    protected bool IsOperational { get; set; }
+    public int Id { get; }
+    public string Name  { get; set; }
+    public bool IsAvailable  { get; set; }
+    public bool IsOperational { get; set; }
 
     protected Equipment(string name)
     {
