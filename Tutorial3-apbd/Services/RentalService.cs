@@ -47,4 +47,16 @@ public class RentalService
         decimal penalty = foundRental.CalculatePenalty();
         Console.WriteLine($"Penalty: {penalty}");
     }
+
+    public List<Rental> GetOverdueRentals()
+    {
+        return rentals.Where(r => !r.IsReturned && r.DueDate < DateTime.Now).ToList();
+    }
+
+    public List<Rental> GetUserActiveRentals(User user)
+    {
+        return rentals.Where(r => r.User == user && !r.IsReturned).ToList();
+    }
+    
+    public List<Rental> GetAllRentals() => rentals;
 }
